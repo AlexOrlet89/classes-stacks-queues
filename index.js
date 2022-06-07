@@ -1,21 +1,20 @@
 class Stack {
-    #stack = [];
+  #list = [];
 
-    constructor(initialStack) {
-        if (initialStack) this.#stack = initialStack;
-    }
+  constructor(initialStack) {
+    if (initialStack) this.#list = initialStack;
+  }
 
-    addToTop(item) {
-    this.#stack.push(item);
-    }
-    get takeFromTop() {
-    return this.#stack.pop();
-    }
-    get peekAtTop() {
-    return this.#stack.peek();
-    }
-
-
+  push(item) {
+    return this.#list.push(item);
+  }
+  get pop() {
+    return this.#list.pop();
+  }
+  peek() {
+    const peeked = this.#list[this.#list.length - 1];
+    return peeked;
+  }
 }
 
 class Queue {}
