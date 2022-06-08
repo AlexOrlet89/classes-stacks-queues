@@ -1,5 +1,5 @@
 class Stack {
-  #list = [];
+  #list = [1,2,3];
 
   constructor(initialStack) {
     if (initialStack) this.#list = initialStack;
@@ -14,6 +14,9 @@ class Stack {
   peek() {
     const peeked = this.#list[this.#list.length - 1];
     return peeked;
+  }
+  get readableList() {
+    return this.#list.toString();
   }
 }
 
@@ -35,4 +38,13 @@ class Queue {
   }
 }
 
-module.exports = { Stack, Queue };
+function reverse(array) {
+  const stack = new Stack()
+  for (let item of array){
+    stack.push(item)
+  }
+  console.log(stack)
+  return stack;
+}
+
+module.exports = { Stack, Queue, reverse };

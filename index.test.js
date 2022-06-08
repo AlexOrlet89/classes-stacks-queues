@@ -1,4 +1,4 @@
-const { Stack } = require("./index.js");
+const { Stack, reverse } = require("./index.js");
 describe("Stack Class", () => {
   it.skip("#push should add a new item to the stack ", () => {
     const stack = new Stack();
@@ -14,4 +14,9 @@ describe("Stack Class", () => {
     expect(stack.peek()).toEqual(1);
   });
   // add more tests here...
+  describe("#reverse", () => {
+    it("should reverse an array", () => {
+      expect(reverse([1, 2, 3])).toEqual([3, 2, 1]);
+    });
+  });
 });
